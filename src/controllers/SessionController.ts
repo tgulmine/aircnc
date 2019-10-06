@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Request, Response } from 'express';
 
 // index, show, store, update, destroy
@@ -6,7 +6,7 @@ import { Request, Response } from 'express';
 import User from '../models/User';
 
 export default {
-  async store(req: Request, res: Response): any {
+  async store(req: Request, res: Response) {
     const { email } = req.body;
 
     let user = await User.findOne({ email });
